@@ -372,6 +372,169 @@
         .skill-node:hover text {
             font-size: 22px;
         }
+        
+        /* Comprehensive Media Queries for All Devices */
+        
+        /* Large Desktop Screens (1920px+) */
+        @media (min-width: 1920px) {
+            .skill-card {
+                transform: scale(1.1);
+            }
+            #skillsMap {
+                min-height: 900px;
+            }
+            .text-5xl { font-size: 4rem; }
+            .text-4xl { font-size: 3rem; }
+        }
+        
+        /* Standard Desktop (1200px - 1919px) */
+        @media (min-width: 1200px) and (max-width: 1919px) {
+            #skillsMap {
+                min-height: 800px;
+            }
+        }
+        
+        /* Laptop/Small Desktop (992px - 1199px) */
+        @media (min-width: 992px) and (max-width: 1199px) {
+            .text-5xl { font-size: 2.5rem; }
+            .text-4xl { font-size: 2rem; }
+            #skillsMap {
+                min-height: 700px;
+            }
+            .skill-card {
+                padding: 1rem;
+            }
+        }
+        
+        /* Tablet Landscape (768px - 991px) */
+        @media (min-width: 768px) and (max-width: 991px) {
+            .text-5xl { font-size: 2rem; }
+            .text-4xl { font-size: 1.75rem; }
+            .text-2xl { font-size: 1.25rem; }
+            #skillsMap {
+                min-height: 600px;
+            }
+            .grid.lg\:grid-cols-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .skill-card {
+                padding: 0.75rem;
+            }
+            .max-w-7xl {
+                padding: 0 1rem;
+            }
+        }
+        
+        /* Tablet Portrait (576px - 767px) */
+        @media (min-width: 576px) and (max-width: 767px) {
+            .text-5xl { font-size: 1.75rem; }
+            .text-4xl { font-size: 1.5rem; }
+            .text-2xl { font-size: 1.125rem; }
+            #skillsMap {
+                min-height: 500px;
+            }
+            .grid.md\:grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+            .grid.lg\:grid-cols-3 {
+                grid-template-columns: 1fr;
+            }
+            .flex.flex-wrap {
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+            }
+            .skill-card {
+                margin: 0.5rem 0;
+            }
+        }
+        
+        /* Mobile Landscape (480px - 575px) */
+        @media (min-width: 480px) and (max-width: 575px) {
+            .text-5xl { font-size: 1.5rem; }
+            .text-4xl { font-size: 1.25rem; }
+            .text-2xl { font-size: 1rem; }
+            #skillsMap {
+                min-height: 400px;
+            }
+            .p-6 { padding: 0.75rem; }
+            .mb-12 { margin-bottom: 2rem; }
+            .gap-6 { gap: 0.75rem; }
+            header {
+                padding: 1rem;
+            }
+        }
+        
+        /* Mobile Portrait (320px - 479px) */
+        @media (max-width: 479px) {
+            .text-5xl { font-size: 1.25rem; }
+            .text-4xl { font-size: 1.125rem; }
+            .text-2xl { font-size: 0.875rem; }
+            .text-xl { font-size: 0.75rem; }
+            #skillsMap {
+                min-height: 350px;
+            }
+            .p-6 { padding: 0.5rem; }
+            .p-4 { padding: 0.375rem; }
+            .mb-12 { margin-bottom: 1.5rem; }
+            .gap-6 { gap: 0.5rem; }
+            .gap-4 { gap: 0.375rem; }
+            header {
+                padding: 0.75rem;
+            }
+            .max-w-2xl {
+                max-width: 95vw;
+                margin: 0.5rem;
+            }
+            .skill-card {
+                font-size: 0.875rem;
+            }
+            .flex.justify-between {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            .space-x-4 > * + * {
+                margin-left: 0;
+                margin-top: 0.5rem;
+            }
+            .space-x-2 > * + * {
+                margin-left: 0;
+                margin-top: 0.25rem;
+            }
+        }
+        
+        /* Ultra-wide screens (2560px+) */
+        @media (min-width: 2560px) {
+            #skillsMap {
+                min-height: 1200px;
+            }
+            .skill-card {
+                transform: scale(1.2);
+                margin: 1rem;
+            }
+            .text-5xl { font-size: 5rem; }
+            .text-4xl { font-size: 4rem; }
+        }
+        
+        /* Responsive SVG Map */
+        #skillsMap svg {
+            width: 100%;
+            height: 100%;
+            max-width: 100vw;
+        }
+        
+        /* Touch-friendly buttons on mobile */
+        @media (max-width: 768px) {
+            button {
+                min-height: 44px;
+                min-width: 44px;
+                padding: 0.75rem 1rem;
+            }
+            .option-btn {
+                padding: 1rem;
+                margin: 0.25rem 0;
+            }
+        }
     </style>
 </head>
 <body class="bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white min-h-screen">
@@ -472,9 +635,9 @@
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
             <!-- Map Visualization -->
             <div class="lg:col-span-2">
-                <div class="bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-lg rounded-3xl p-8 border border-white/20">
-                    <h3 class="text-2xl font-bold mb-6 text-center">🗺️ <span id="journeyPathTitle">Skills Journey Path</span></h3>
-                    <div id="skillsMap" class="relative min-h-96"></div>
+                <div class="bg-gradient-to-br from-blue-900/50 to-purple-900/50 backdrop-blur-lg rounded-3xl p-4 border border-white/20">
+                    <h3 class="text-2xl font-bold mb-4 text-center">🗺️ <span id="journeyPathTitle">Skills Journey Path</span></h3>
+                    <div id="skillsMap" class="relative min-h-[700px] w-full overflow-hidden rounded-2xl bg-black/20"></div>
                 </div>
             </div>
             
@@ -1506,38 +1669,49 @@
             playSound('ambient');
             createMapParticles();
             
-            // Create realistic skill world map
+            // Create realistic solar system map with full screen utilization
             mapContainer.innerHTML = `
-                <svg viewBox="0 0 800 600" class="w-full h-full">
+                <svg viewBox="0 0 1600 1000" class="w-full h-full" preserveAspectRatio="xMidYMid meet">
                     <defs>
-                        <!-- Terrain gradients -->
-                        <radialGradient id="mountain" cx="50%" cy="30%" r="70%">
-                            <stop offset="0%" style="stop-color:#8B7355;stop-opacity:1" />
-                            <stop offset="100%" style="stop-color:#5D4E37;stop-opacity:1" />
+                        <!-- Space background gradient -->
+                        <radialGradient id="spaceGradient" cx="50%" cy="50%" r="70%">
+                            <stop offset="0%" style="stop-color:#1E1B4B;stop-opacity:1" />
+                            <stop offset="50%" style="stop-color:#0F0C29;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#000000;stop-opacity:1" />
                         </radialGradient>
-                        <linearGradient id="river" x1="0%" y1="0%" x2="100%" y2="100%">
-                            <stop offset="0%" style="stop-color:#3B82F6;stop-opacity:0.8" />
-                            <stop offset="100%" style="stop-color:#1E40AF;stop-opacity:0.6" />
-                        </linearGradient>
-                        <radialGradient id="forest" cx="50%" cy="50%" r="60%">
-                            <stop offset="0%" style="stop-color:#22C55E;stop-opacity:0.7" />
-                            <stop offset="100%" style="stop-color:#15803D;stop-opacity:0.5" />
+                        
+                        <!-- Central star (sun) gradient -->
+                        <radialGradient id="sunGradient" cx="50%" cy="50%" r="50%">
+                            <stop offset="0%" style="stop-color:#FFF700;stop-opacity:1" />
+                            <stop offset="70%" style="stop-color:#FF8C00;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#FF4500;stop-opacity:0.8" />
                         </radialGradient>
-                        <!-- Animated path gradient -->
-                        <linearGradient id="animatedPath" x1="0%" y1="0%" x2="100%" y2="0%">
-                            <stop offset="0%" style="stop-color:#FCD34D;stop-opacity:0.8">
-                                <animate attributeName="stop-opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+                        
+                        <!-- Animated energy path -->
+                        <linearGradient id="energyPath" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:0.8">
+                                <animate attributeName="stop-opacity" values="0.3;0.9;0.3" dur="3s" repeatCount="indefinite"/>
                             </stop>
-                            <stop offset="50%" style="stop-color:#F59E0B;stop-opacity:1">
-                                <animate attributeName="stop-opacity" values="0.5;1;0.5" dur="2s" repeatCount="indefinite"/>
+                            <stop offset="50%" style="stop-color:#FF6B35;stop-opacity:1">
+                                <animate attributeName="stop-opacity" values="0.5;1;0.5" dur="3s" repeatCount="indefinite"/>
                             </stop>
-                            <stop offset="100%" style="stop-color:#FCD34D;stop-opacity:0.8">
-                                <animate attributeName="stop-opacity" values="0.3;0.8;0.3" dur="2s" repeatCount="indefinite"/>
+                            <stop offset="100%" style="stop-color:#FFD700;stop-opacity:0.8">
+                                <animate attributeName="stop-opacity" values="0.3;0.9;0.3" dur="3s" repeatCount="indefinite"/>
                             </stop>
                         </linearGradient>
-                        <!-- Glowing effect for completed skills -->
+                        
+                        <!-- Glowing effect -->
                         <filter id="glow">
-                            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+                            <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+                            <feMerge> 
+                                <feMergeNode in="coloredBlur"/>
+                                <feMergeNode in="SourceGraphic"/>
+                            </feMerge>
+                        </filter>
+                        
+                        <!-- Solar flare effect -->
+                        <filter id="flare">
+                            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
                             <feMerge> 
                                 <feMergeNode in="coloredBlur"/>
                                 <feMergeNode in="SourceGraphic"/>
@@ -1545,36 +1719,61 @@
                         </filter>
                     </defs>
                     
-                    <!-- Terrain background -->
-                    <rect width="100%" height="100%" fill="#1E293B" />
+                    <!-- Deep space background -->
+                    <rect width="100%" height="100%" fill="url(#spaceGradient)" />
                     
-                    <!-- Mountains (Level 3 area) -->
-                    <ellipse cx="500" cy="150" rx="180" ry="80" fill="url(#mountain)" opacity="0.6"/>
-                    <ellipse cx="550" cy="120" rx="120" ry="50" fill="url(#mountain)" opacity="0.4"/>
+                    <!-- Central star (Sophia - The Wisdom Star) -->
+                    <g id="sophiaStar">
+                        <!-- Core -->
+                        <circle cx="700" cy="450" r="50" fill="url(#sunGradient)" filter="url(#flare)">
+                            <animate attributeName="r" values="50;58;50" dur="4s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- Inner corona -->
+                        <circle cx="700" cy="450" r="70" fill="none" stroke="#FFD700" stroke-width="5" opacity="0.8">
+                            <animate attributeName="r" values="70;80;70" dur="6s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.8;1;0.8" dur="6s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- Outer corona -->
+                        <circle cx="700" cy="450" r="90" fill="none" stroke="#FF8C00" stroke-width="4" opacity="0.5">
+                            <animate attributeName="r" values="90;100;90" dur="8s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.5;0.9;0.5" dur="8s" repeatCount="indefinite"/>
+                        </circle>
+                        
+                        <!-- Solar flares -->
+                        <path d="M 700 370 L 710 350 L 690 350 Z" fill="#FF4500" opacity="0.8">
+                            <animateTransform attributeName="transform" type="rotate" 
+                                            values="0 700 450;360 700 450" dur="12s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.8;0.3;0.8" dur="3s" repeatCount="indefinite"/>
+                        </path>
+                        <path d="M 790 460 L 810 465 L 810 455 Z" fill="#FF6B35" opacity="0.7">
+                            <animateTransform attributeName="transform" type="rotate" 
+                                            values="0 700 450;360 700 450" dur="15s" repeatCount="indefinite"/>
+                            <animate attributeName="opacity" values="0.7;0.2;0.7" dur="4s" repeatCount="indefinite"/>
+                        </path>
+                        
+                        <!-- Star name -->
+                        <text x="700" y="580" text-anchor="middle" font-size="20" fill="#FFD700" font-weight="bold">
+                            ✦ SOPHIA ✦
+                            <animate attributeName="opacity" values="0.7;1;0.7" dur="3s" repeatCount="indefinite"/>
+                        </text>
+                        <text x="700" y="600" text-anchor="middle" font-size="14" fill="#FFA500" opacity="0.8">
+                            The Wisdom Star
+                        </text>
+                    </g>
                     
-                    <!-- Forest areas (Level 1 & 2) -->
-                    <circle cx="200" cy="200" r="100" fill="url(#forest)"/>
-                    <circle cx="400" cy="250" r="80" fill="url(#forest)"/>
-                    <circle cx="300" cy="350" r="90" fill="url(#forest)"/>
+                    <!-- Orbital paths -->
+                    ${renderOrbitalPaths()}
                     
-                    <!-- Animated river connecting areas -->
-                    <path d="M 100 180 Q 250 220 400 200 Q 550 180 700 220 Q 650 350 500 380 Q 350 400 200 380" 
-                          stroke="url(#river)" stroke-width="12" fill="none" opacity="0.7">
-                        <animate attributeName="stroke-dasharray" values="0,1000;1000,0" dur="8s" repeatCount="indefinite"/>
-                    </path>
-                    
-                    <!-- Floating islands for expert skills -->
-                    <ellipse cx="600" cy="400" rx="60" ry="25" fill="#6366F1" opacity="0.3"/>
-                    <ellipse cx="200" cy="450" rx="50" ry="20" fill="#8B5CF6" opacity="0.3"/>
-                    
-                    <!-- Skill connections with animated paths -->
+                    <!-- Energy connections between planets -->
                     ${renderEnhancedConnections()}
                     
-                    <!-- Skill nodes with terrain integration -->
+                    <!-- Planet nodes -->
                     ${renderEnhancedNodes()}
                     
-                    <!-- Animated weather effects -->
-                    ${renderWeatherEffects()}
+                    <!-- Space effects -->
+                    ${renderSpaceEffects()}
                 </svg>
             `;
             
@@ -1730,72 +1929,178 @@
             const positions = getSkillPositions();
             let nodes = '';
             
+            const planetData = {
+                1: { name: 'Communicara', type: 'earth', colors: ['#1E3A8A', '#3B82F6', '#60A5FA'], atmosphere: '#DBEAFE', surface: '#065F46' },
+                2: { name: 'Collaboris', type: 'mars', colors: ['#7C2D12', '#DC2626', '#F87171'], atmosphere: '#FEE2E2', surface: '#451A03' },
+                3: { name: 'Empathia', type: 'venus', colors: ['#A16207', '#F59E0B', '#FCD34D'], atmosphere: '#FEF3C7', surface: '#78350F' },
+                4: { name: 'Solveron', type: 'jupiter', colors: ['#7C2D12', '#A16207', '#D97706'], atmosphere: '#FED7AA', surface: '#92400E' },
+                5: { name: 'Chronos Prime', type: 'saturn', colors: ['#581C87', '#7C3AED', '#A78BFA'], atmosphere: '#DDD6FE', surface: '#3C1361' },
+                6: { name: 'Analyticus', type: 'neptune', colors: ['#0C4A6E', '#0284C7', '#38BDF8'], atmosphere: '#BFDBFE', surface: '#164E63' },
+                7: { name: 'Leaderion', type: 'mercury', colors: ['#374151', '#6B7280', '#9CA3AF'], atmosphere: '#F3F4F6', surface: '#1F2937' },
+                8: { name: 'Adaptara', type: 'uranus', colors: ['#064E3B', '#059669', '#34D399'], atmosphere: '#A7F3D0', surface: '#022C22' },
+                9: { name: 'Innovatia', type: 'pluto', colors: ['#312E81', '#6366F1', '#818CF8'], atmosphere: '#E0E7FF', surface: '#1E1B4B' }
+            };
+            
             skillsData.forEach(skill => {
                 const pos = positions[skill.id];
                 if (pos) {
                     const isCompleted = gameState.completedSkills.includes(skill.id);
                     const isUnlocked = isSkillUnlocked(skill);
-                    
-                    // Enhanced node with terrain-appropriate styling
-                    const nodeColor = isCompleted ? '#10b981' : isUnlocked ? '#6366f1' : '#6b7280';
-                    const glowColor = isCompleted ? '#34d399' : isUnlocked ? '#818cf8' : '#9ca3af';
+                    const planet = planetData[skill.id];
                     
                     nodes += `
                         <g class="skill-node cursor-pointer" 
                            onclick="openSkillFromMap(${skill.id})" 
                            onmouseover="playSound('mapHover')">
                             
-                            <!-- Outer glow ring -->
-                            <circle cx="${pos.x}" cy="${pos.y}" r="35" 
-                                    fill="none" stroke="${glowColor}" stroke-width="2" opacity="0.3">
-                                ${isCompleted ? '<animate attributeName="r" values="35;45;35" dur="2s" repeatCount="indefinite"/>' : ''}
-                                ${isCompleted ? '<animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>' : ''}
+                            <!-- Planet atmosphere -->
+                            <circle cx="${pos.x}" cy="${pos.y}" r="60" 
+                                    fill="${planet.atmosphere}" opacity="0.2">
+                                <animate attributeName="r" values="60;65;60" dur="6s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.2;0.4;0.2" dur="6s" repeatCount="indefinite"/>
                             </circle>
                             
-                            <!-- Main skill node -->
-                            <circle cx="${pos.x}" cy="${pos.y}" r="28" 
-                                    fill="${nodeColor}" 
-                                    stroke="${isCompleted ? '#059669' : isUnlocked ? '#4f46e5' : '#4b5563'}" 
-                                    stroke-width="4" 
-                                    ${isCompleted ? 'filter="url(#glow)"' : ''}
-                                    class="transition-all duration-300">
-                                ${isUnlocked ? '<animate attributeName="r" values="28;32;28" dur="4s" repeatCount="indefinite"/>' : ''}
+                            <!-- Planet surface with realistic texture -->
+                            <defs>
+                                <radialGradient id="planet${skill.id}" cx="25%" cy="25%" r="75%">
+                                    <stop offset="0%" style="stop-color:${planet.colors[2]};stop-opacity:1" />
+                                    <stop offset="40%" style="stop-color:${planet.colors[1]};stop-opacity:1" />
+                                    <stop offset="100%" style="stop-color:${planet.colors[0]};stop-opacity:1" />
+                                </radialGradient>
+                                <radialGradient id="planetSurface${skill.id}" cx="70%" cy="30%" r="60%">
+                                    <stop offset="0%" style="stop-color:${planet.surface};stop-opacity:0.4" />
+                                    <stop offset="100%" style="stop-color:${planet.colors[0]};stop-opacity:0.8" />
+                                </radialGradient>
+                                <pattern id="terrain${skill.id}" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                                    <circle cx="4" cy="4" r="1.5" fill="${planet.surface}" opacity="0.4"/>
+                                    <circle cx="12" cy="8" r="1" fill="${planet.surface}" opacity="0.3"/>
+                                    <circle cx="8" cy="12" r="0.8" fill="${planet.surface}" opacity="0.5"/>
+                                </pattern>
+                            </defs>
+                            
+                            <!-- Main planet body with enhanced 3D realism -->
+                            <circle cx="${pos.x}" cy="${pos.y}" r="75" 
+                                    fill="url(#planet${skill.id})" 
+                                    stroke="${isCompleted ? '#FFD700' : isUnlocked ? planet.colors[1] : '#6B7280'}" 
+                                    stroke-width="5" 
+                                    ${isCompleted ? 'filter="url(#glow)"' : ''}>
+                                <animateTransform attributeName="transform" type="rotate" 
+                                                values="0 ${pos.x} ${pos.y};360 ${pos.x} ${pos.y}" 
+                                                dur="${20 + skill.id * 3}s" repeatCount="indefinite"/>
                             </circle>
                             
-                            <!-- Skill icon with floating animation -->
-                            <text x="${pos.x}" y="${pos.y + 6}" text-anchor="middle" 
-                                  font-size="24" fill="white" font-weight="bold">${skill.icon}
-                                ${isCompleted ? '<animateTransform attributeName="transform" type="rotate" values="0 ' + pos.x + ' ' + pos.y + ';360 ' + pos.x + ' ' + pos.y + '" dur="10s" repeatCount="indefinite"/>' : ''}
-                            </text>
+                            <!-- 3D shadow effect -->
+                            <ellipse cx="${pos.x + 15}" cy="${pos.y + 15}" rx="75" ry="35" 
+                                    fill="rgba(0,0,0,0.3)" opacity="0.6">
+                                <animateTransform attributeName="transform" type="rotate" 
+                                                values="0 ${pos.x} ${pos.y};360 ${pos.x} ${pos.y}" 
+                                                dur="${25 + skill.id * 2}s" repeatCount="indefinite"/>
+                            </ellipse>
                             
-                            <!-- Skill name with background -->
-                            <rect x="${pos.x - 40}" y="${pos.y + 40}" width="80" height="20" 
-                                  rx="10" fill="rgba(0,0,0,0.7)" stroke="${nodeColor}" stroke-width="1"/>
-                            <text x="${pos.x}" y="${pos.y + 53}" text-anchor="middle" 
-                                  font-size="11" fill="white" font-weight="bold">${getSkillTranslation(skill.id, 'name')}</text>
+                            <!-- Realistic lighting highlight -->
+                            <ellipse cx="${pos.x - 20}" cy="${pos.y - 20}" rx="25" ry="40" 
+                                    fill="rgba(255,255,255,0.4)" opacity="0.8">
+                                <animateTransform attributeName="transform" type="rotate" 
+                                                values="0 ${pos.x} ${pos.y};360 ${pos.x} ${pos.y}" 
+                                                dur="${30 + skill.id * 2}s" repeatCount="indefinite"/>
+                            </ellipse>
                             
-                            <!-- Completion badge -->
-                            ${isCompleted ? `
-                                <circle cx="${pos.x + 20}" cy="${pos.y - 20}" r="8" fill="#10b981" stroke="#059669" stroke-width="2"/>
-                                <text x="${pos.x + 20}" y="${pos.y - 16}" text-anchor="middle" font-size="12" fill="white">✓</text>
+                            <!-- Planet surface layer -->
+                            <circle cx="${pos.x}" cy="${pos.y}" r="75" 
+                                    fill="url(#planetSurface${skill.id})" opacity="0.7">
+                                <animateTransform attributeName="transform" type="rotate" 
+                                                values="0 ${pos.x} ${pos.y};360 ${pos.x} ${pos.y}" 
+                                                dur="${25 + skill.id * 2}s" repeatCount="indefinite"/>
+                            </circle>
+                            
+                            <!-- Terrain details -->
+                            <circle cx="${pos.x}" cy="${pos.y}" r="75" 
+                                    fill="url(#terrain${skill.id})" opacity="0.5">
+                                <animateTransform attributeName="transform" type="rotate" 
+                                                values="360 ${pos.x} ${pos.y};0 ${pos.x} ${pos.y}" 
+                                                dur="${30 + skill.id * 2}s" repeatCount="indefinite"/>
+                            </circle>
+                            
+                            <!-- Enhanced atmospheric glow -->
+                            <circle cx="${pos.x}" cy="${pos.y}" r="85" 
+                                    fill="none" stroke="${planet.atmosphere}" stroke-width="3" opacity="0.4">
+                                <animate attributeName="r" values="85;90;85" dur="8s" repeatCount="indefinite"/>
+                                <animate attributeName="opacity" values="0.4;0.7;0.4" dur="8s" repeatCount="indefinite"/>
+                            </circle>
+                            
+                            <!-- Planetary rings for gas giants -->
+                            ${[4, 5, 6].includes(skill.id) ? `
+                                <ellipse cx="${pos.x}" cy="${pos.y}" rx="70" ry="12" 
+                                        fill="none" stroke="${planet.colors[1]}" stroke-width="4" opacity="0.7">
+                                    <animateTransform attributeName="transform" type="rotate" 
+                                                    values="0 ${pos.x} ${pos.y};360 ${pos.x} ${pos.y}" 
+                                                    dur="${15 + skill.id}s" repeatCount="indefinite"/>
+                                </ellipse>
+                                <ellipse cx="${pos.x}" cy="${pos.y}" rx="62" ry="10" 
+                                        fill="none" stroke="${planet.colors[2]}" stroke-width="3" opacity="0.5">
+                                    <animateTransform attributeName="transform" type="rotate" 
+                                                    values="360 ${pos.x} ${pos.y};0 ${pos.x} ${pos.y}" 
+                                                    dur="${12 + skill.id}s" repeatCount="indefinite"/>
+                                </ellipse>
+                                <ellipse cx="${pos.x}" cy="${pos.y}" rx="54" ry="8" 
+                                        fill="none" stroke="${planet.atmosphere}" stroke-width="2" opacity="0.3">
+                                    <animateTransform attributeName="transform" type="rotate" 
+                                                    values="0 ${pos.x} ${pos.y};360 ${pos.x} ${pos.y}" 
+                                                    dur="${18 + skill.id}s" repeatCount="indefinite"/>
+                                </ellipse>
                             ` : ''}
                             
-                            <!-- Lock icon for locked skills -->
+                            <!-- Skill icon orbiting the planet -->
+                            <g>
+                                <animateTransform attributeName="transform" type="rotate" 
+                                                values="0 ${pos.x} ${pos.y};360 ${pos.x} ${pos.y}" 
+                                                dur="${8 + skill.id}s" repeatCount="indefinite"/>
+                                <text x="${pos.x + 50}" y="${pos.y + 8}" text-anchor="middle" 
+                                      font-size="24" fill="white" font-weight="bold">${skill.icon}</text>
+                            </g>
+                            
+                            <!-- Planet name and info -->
+                            <text x="${pos.x}" y="${pos.y + 85}" text-anchor="middle" 
+                                  font-size="14" fill="${planet.colors[2]}" font-weight="bold">${planet.name}</text>
+                            <text x="${pos.x}" y="${pos.y + 100}" text-anchor="middle" 
+                                  font-size="12" fill="white" opacity="0.8">${getSkillTranslation(skill.id, 'name')}</text>
+                            
+                            <!-- Completion status -->
+                            ${isCompleted ? `
+                                <circle cx="${pos.x + 35}" cy="${pos.y - 35}" r="12" fill="#FFD700" stroke="#FFA500" stroke-width="3">
+                                    <animate attributeName="r" values="12;16;12" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                <text x="${pos.x + 35}" y="${pos.y - 29}" text-anchor="middle" font-size="14" fill="white">✓</text>
+                            ` : ''}
+                            
+                            <!-- Lock status for unexplored planets -->
                             ${!isUnlocked ? `
-                                <circle cx="${pos.x + 20}" cy="${pos.y - 20}" r="8" fill="#6b7280" stroke="#4b5563" stroke-width="2"/>
-                                <text x="${pos.x + 20}" y="${pos.y - 16}" text-anchor="middle" font-size="10" fill="white">🔒</text>
+                                <circle cx="${pos.x}" cy="${pos.y}" r="50" fill="rgba(0,0,0,0.8)"/>
+                                <circle cx="${pos.x}" cy="${pos.y}" r="50" fill="none" stroke="#4B5563" stroke-width="3" stroke-dasharray="8,8">
+                                    <animate attributeName="stroke-dashoffset" values="0;16" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                                <text x="${pos.x}" y="${pos.y + 8}" text-anchor="middle" font-size="28" fill="#9CA3AF">🔒</text>
+                                <text x="${pos.x}" y="${pos.y + 85}" text-anchor="middle" font-size="12" fill="#6B7280">UNEXPLORED</text>
                             ` : ''}
                             
-                            <!-- Floating particles for completed skills -->
+                            <!-- Moons for completed planets -->
                             ${isCompleted ? `
-                                <circle cx="${pos.x - 15}" cy="${pos.y - 15}" r="2" fill="#FCD34D" opacity="0.8">
-                                    <animate attributeName="cy" values="${pos.y - 15};${pos.y - 35};${pos.y - 15}" dur="3s" repeatCount="indefinite"/>
-                                    <animate attributeName="opacity" values="0.8;0.2;0.8" dur="3s" repeatCount="indefinite"/>
-                                </circle>
-                                <circle cx="${pos.x + 15}" cy="${pos.y - 10}" r="1.5" fill="#34D399" opacity="0.6">
-                                    <animate attributeName="cy" values="${pos.y - 10};${pos.y - 30};${pos.y - 10}" dur="4s" repeatCount="indefinite"/>
-                                    <animate attributeName="opacity" values="0.6;0.1;0.6" dur="4s" repeatCount="indefinite"/>
-                                </circle>
+                                <g>
+                                    <animateTransform attributeName="transform" type="rotate" 
+                                                    values="0 ${pos.x} ${pos.y};360 ${pos.x} ${pos.y}" 
+                                                    dur="${6 + skill.id}s" repeatCount="indefinite"/>
+                                    <circle cx="${pos.x + 65}" cy="${pos.y}" r="6" fill="#E5E7EB" stroke="#9CA3AF" stroke-width="2">
+                                        <animate attributeName="fill" values="#E5E7EB;#F3F4F6;#E5E7EB" dur="3s" repeatCount="indefinite"/>
+                                    </circle>
+                                </g>
+                                <g>
+                                    <animateTransform attributeName="transform" type="rotate" 
+                                                    values="180 ${pos.x} ${pos.y};540 ${pos.x} ${pos.y}" 
+                                                    dur="${8 + skill.id}s" repeatCount="indefinite"/>
+                                    <circle cx="${pos.x - 60}" cy="${pos.y}" r="4" fill="#FCD34D" stroke="#F59E0B" stroke-width="1">
+                                        <animate attributeName="fill" values="#FCD34D;#FDE047;#FCD34D" dur="4s" repeatCount="indefinite"/>
+                                    </circle>
+                                </g>
                             ` : ''}
                         </g>
                     `;
@@ -1805,47 +2110,92 @@
             return nodes;
         }
         
-        function renderWeatherEffects() {
+        function renderSpaceEffects() {
             let effects = '';
             
-            // Floating clouds
-            for (let i = 0; i < 3; i++) {
-                const x = 100 + i * 250;
-                const y = 50 + Math.random() * 100;
+            // Distant stars
+            for (let i = 0; i < 50; i++) {
+                const x = Math.random() * 800;
+                const y = Math.random() * 600;
+                const size = Math.random() * 2 + 0.5;
                 effects += `
-                    <ellipse cx="${x}" cy="${y}" rx="40" ry="15" fill="rgba(255,255,255,0.1)">
-                        <animateTransform attributeName="transform" type="translate" 
-                                        values="0,0;100,0;0,0" dur="${20 + i * 5}s" repeatCount="indefinite"/>
+                    <circle cx="${x}" cy="${y}" r="${size}" fill="white" opacity="0.8">
+                        <animate attributeName="opacity" values="0.3;1;0.3" dur="${3 + Math.random() * 4}s" repeatCount="indefinite"/>
+                    </circle>
+                `;
+            }
+            
+            // Nebula clouds
+            for (let i = 0; i < 4; i++) {
+                const x = Math.random() * 800;
+                const y = Math.random() * 600;
+                const colors = ['#FF6B9D', '#4ECDC4', '#45B7D1', '#96CEB4'];
+                effects += `
+                    <ellipse cx="${x}" cy="${y}" rx="${30 + Math.random() * 40}" ry="${15 + Math.random() * 20}" 
+                             fill="${colors[i]}" opacity="0.1">
+                        <animateTransform attributeName="transform" type="rotate" 
+                                        values="0 ${x} ${y};360 ${x} ${y}" dur="${60 + i * 20}s" repeatCount="indefinite"/>
+                        <animate attributeName="opacity" values="0.05;0.15;0.05" dur="${10 + i * 3}s" repeatCount="indefinite"/>
                     </ellipse>
                 `;
             }
             
-            // Twinkling stars
-            for (let i = 0; i < 8; i++) {
-                const x = Math.random() * 800;
-                const y = Math.random() * 200;
+            // Asteroid belt
+            for (let i = 0; i < 12; i++) {
+                const angle = (i / 12) * 360;
+                const radius = 180 + Math.random() * 20;
+                const x = 400 + Math.cos(angle * Math.PI / 180) * radius;
+                const y = 300 + Math.sin(angle * Math.PI / 180) * radius;
                 effects += `
-                    <circle cx="${x}" cy="${y}" r="1" fill="white" opacity="0.6">
-                        <animate attributeName="opacity" values="0.2;1;0.2" dur="${2 + Math.random() * 3}s" repeatCount="indefinite"/>
+                    <circle cx="${x}" cy="${y}" r="${1 + Math.random() * 2}" fill="#8B7355" opacity="0.6">
+                        <animateTransform attributeName="transform" type="rotate" 
+                                        values="0 400 300;360 400 300" dur="${40 + i * 2}s" repeatCount="indefinite"/>
                     </circle>
                 `;
             }
             
             return effects;
         }
+        
+        function renderOrbitalPaths() {
+            let paths = '';
+            const positions = getSkillPositions();
+            
+            skillsData.forEach(skill => {
+                const pos = positions[skill.id];
+                if (pos) {
+                    const centerX = 800, centerY = 500;
+                    const radius = Math.sqrt(Math.pow(pos.x - centerX, 2) + Math.pow(pos.y - centerY, 2));
+                    
+                    paths += `
+                        <circle cx="${centerX}" cy="${centerY}" r="${radius}" 
+                                fill="none" stroke="rgba(255,255,255,0.2)" stroke-width="3" 
+                                stroke-dasharray="8,12" opacity="0.7">
+                            <animate attributeName="stroke-dashoffset" values="0;20" dur="${10 + skill.id * 2}s" repeatCount="indefinite"/>
+                        </circle>
+                    `;
+                }
+            });
+            
+            return paths;
+        }
 
         function getSkillPositions() {
-            // Positioned to match terrain features
+            // Enhanced orbital mechanics using full screen space
+            const centerX = 800, centerY = 500;
+            const orbits = [180, 220, 260, 300, 340, 380, 420, 460, 500]; // Much larger orbital distances
+            const angles = [0, Math.PI/3, 2*Math.PI/3, Math.PI, 4*Math.PI/3, 5*Math.PI/3, Math.PI/6, 5*Math.PI/6, 7*Math.PI/4];
+            
             return {
-                1: {x: 150, y: 180}, // Communication - Forest area
-                2: {x: 320, y: 140}, // Teamwork - Forest edge
-                3: {x: 220, y: 280}, // Emotional Intelligence - Deep forest
-                4: {x: 420, y: 220}, // Problem-Solving - Forest/mountain border
-                5: {x: 520, y: 160}, // Time Management - Mountain foothills
-                6: {x: 580, y: 280}, // Critical Thinking - Mountain area
-                7: {x: 380, y: 380}, // Leadership - Central valley
-                8: {x: 180, y: 450}, // Adaptability - Floating island
-                9: {x: 580, y: 420}  // Innovation - Mountain peak floating island
+                1: {x: centerX + orbits[0] * Math.cos(angles[0]), y: centerY + orbits[0] * Math.sin(angles[0])}, // Communicara
+                2: {x: centerX + orbits[1] * Math.cos(angles[1]), y: centerY + orbits[1] * Math.sin(angles[1])}, // Collaboris
+                3: {x: centerX + orbits[2] * Math.cos(angles[2]), y: centerY + orbits[2] * Math.sin(angles[2])}, // Empathia
+                4: {x: centerX + orbits[3] * Math.cos(angles[3]), y: centerY + orbits[3] * Math.sin(angles[3])}, // Solveron
+                5: {x: centerX + orbits[4] * Math.cos(angles[4]), y: centerY + orbits[4] * Math.sin(angles[4])}, // Chronos Prime
+                6: {x: centerX + orbits[5] * Math.cos(angles[5]), y: centerY + orbits[5] * Math.sin(angles[5])}, // Analyticus
+                7: {x: centerX + orbits[6] * Math.cos(angles[6]), y: centerY + orbits[6] * Math.sin(angles[6])}, // Leaderion
+                8: {x: centerX + orbits[7] * Math.cos(angles[7]), y: centerY + orbits[7] * Math.sin(angles[7])}, // Adaptara
+                9: {x: centerX + orbits[8] * Math.cos(angles[8]), y: centerY + orbits[8] * Math.sin(angles[8])}  // Innovatia
             };
         }
 
